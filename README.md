@@ -42,14 +42,14 @@
   #
   - Build the Dockerfile
   ```bash
-  docker build -t madhupdevops/springboot-bankapp .
+  docker build -t springboot-bankapp .
   ```
 > [!Important]
 > Make sure to change docker build command with your DockerHub username.
   #
   - Create a docker network
   ```bash
-  docker network create bankapp
+  docker network create -d bridge bankapp
   ```
   #
   - Run MYSQL container
@@ -59,7 +59,7 @@
   #
   - Run Application container
   ```bash
-  docker run -itd --name BankApp -e SPRING_DATASOURCE_USERNAME="root" -e SPRING_DATASOURCE_URL="jdbc:mysql://mysql:3306/BankDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC" -e SPRING_DATASOURCE_PASSWORD="Test@123" --network=bankapp -p 8080:8080 madhupdevops/springboot-bankapp
+  docker run -itd --name BankApp -e SPRING_DATASOURCE_USERNAME="root" -e SPRING_DATASOURCE_URL="jdbc:mysql://mysql:3306/BankDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC" -e SPRING_DATASOURCE_PASSWORD="Test@123" --network=bankapp -p 8080:8080 springboot-bankapp
   ```
   #
   - Verify deployment
