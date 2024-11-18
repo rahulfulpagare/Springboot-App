@@ -43,7 +43,7 @@
   - Build the Dockerfile
   ```bash
   docker build -t bankapp:latest .
-   ```
+  ```
 > [!Important]
 > Make sure to change docker build command with your DockerHub username.
   #
